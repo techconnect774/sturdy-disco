@@ -98,7 +98,7 @@ export function CommentSection({ articleId }: CommentSectionProps) {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
+      <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-8 flex items-center">
         <svg className="w-8 h-8 mr-3 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
@@ -106,8 +106,8 @@ export function CommentSection({ articleId }: CommentSectionProps) {
       </h2>
 
       {/* Comment Form */}
-      <div className="mb-10 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-md border border-blue-100 dark:border-gray-700">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+      <div className="mb-10 bg-blue-50 dark:bg-gray-900 rounded-xl p-6 shadow-md border border-blue-200 dark:border-gray-800">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-4">
           Leave a Comment
         </h3>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -124,7 +124,7 @@ export function CommentSection({ articleId }: CommentSectionProps) {
               name="author_name"
               value={formData.author_name}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow shadow-sm"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow shadow-sm"
               placeholder="Enter your name"
               disabled={submitting}
               required
@@ -144,7 +144,7 @@ export function CommentSection({ articleId }: CommentSectionProps) {
               value={formData.content}
               onChange={handleInputChange}
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-shadow shadow-sm"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-shadow shadow-sm"
               placeholder="Share your thoughts..."
               disabled={submitting}
               required
@@ -193,14 +193,14 @@ export function CommentSection({ articleId }: CommentSectionProps) {
       {loading ? (
         <div className="text-center py-12">
           <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 dark:border-blue-400"></div>
-          <p className="text-gray-600 dark:text-gray-400 mt-4">Loading comments...</p>
+          <p className="text-gray-700 dark:text-gray-300 mt-4">Loading comments...</p>
         </div>
       ) : comments.length === 0 ? (
-        <div className="text-center py-12 bg-gray-50 dark:bg-gray-800 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700">
+        <div className="text-center py-12 bg-gray-50 dark:bg-gray-900 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700">
           <svg className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
-          <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg">
+          <p className="text-gray-700 dark:text-gray-300 mt-4 text-lg font-medium">
             No comments yet. Be the first to comment!
           </p>
         </div>
@@ -209,22 +209,22 @@ export function CommentSection({ articleId }: CommentSectionProps) {
           {comments.map((comment) => (
             <div
               key={comment.id}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow"
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold mr-3">
                     {comment.author_name.charAt(0).toUpperCase()}
                   </div>
-                  <span className="font-semibold text-gray-900 dark:text-white">
+                  <span className="font-semibold text-gray-900 dark:text-gray-50">
                     {comment.author_name}
                   </span>
                 </div>
-                <time className="text-sm text-gray-500 dark:text-gray-500">
+                <time className="text-sm text-gray-600 dark:text-gray-400">
                   {formatDate(comment.created_at)}
                 </time>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed pl-13">
+              <p className="text-gray-800 dark:text-gray-200 whitespace-pre-wrap leading-relaxed pl-13">
                 {comment.content}
               </p>
             </div>

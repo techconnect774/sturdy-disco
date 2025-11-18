@@ -30,7 +30,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
   return (
     <article
       onClick={handleClick}
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden group border border-gray-100 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transform hover:-translate-y-1"
+      className="bg-white dark:bg-gray-900 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden group border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transform hover:-translate-y-1"
     >
       {/* Thumbnail */}
       <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden relative">
@@ -50,17 +50,17 @@ export function ArticleCard({ article }: ArticleCardProps) {
 
       {/* Content */}
       <div className="p-6">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-gray-50 mb-3 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
           {article.title}
         </h2>
 
         {article.excerpt && (
-          <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 leading-relaxed">
             {article.excerpt}
           </p>
         )}
 
-        <div className="flex items-center text-sm text-gray-500 dark:text-gray-500 pt-2 border-t border-gray-100 dark:border-gray-700">
+        <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 pt-2 border-t border-gray-200 dark:border-gray-800">
           <Calendar className="w-4 h-4 mr-2 flex-shrink-0" />
           <time dateTime={article.published_at || undefined}>
             {formatDate(article.published_at)}

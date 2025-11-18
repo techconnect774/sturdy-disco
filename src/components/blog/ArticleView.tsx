@@ -61,8 +61,8 @@ export function ArticleView() {
   if (!article) {
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center text-gray-600 dark:text-gray-400">
-          <p className="text-xl">Article not found.</p>
+        <div className="text-center text-gray-800 dark:text-gray-200">
+          <p className="text-xl font-medium">Article not found.</p>
         </div>
       </div>
     );
@@ -91,11 +91,11 @@ export function ArticleView() {
 
       {/* Article Header */}
       <header className="mb-10 pb-8 border-b border-gray-200 dark:border-gray-800">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-50 mb-6 leading-tight">
           {article.title}
         </h1>
         {article.published_at && (
-          <div className="flex items-center text-gray-600 dark:text-gray-400">
+          <div className="flex items-center text-gray-700 dark:text-gray-300">
             <Calendar className="w-5 h-5 mr-2" />
             <time className="text-lg">
               {formatDate(article.published_at)}
@@ -139,7 +139,7 @@ export function ArticleView() {
                   </video>
                 )}
                 {mediaItem.caption && (
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 px-4 pb-3 text-center italic">
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-3 px-4 pb-3 text-center italic">
                     {mediaItem.caption}
                   </p>
                 )}

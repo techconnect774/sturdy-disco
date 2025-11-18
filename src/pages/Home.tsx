@@ -4,7 +4,7 @@ import { ArticleFeed } from '../components/blog/ArticleFeed';
 
 export function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
       <Header />
       <main className="flex-1">
         <ArticleFeed />

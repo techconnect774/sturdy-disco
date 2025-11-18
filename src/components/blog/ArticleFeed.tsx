@@ -55,9 +55,9 @@ export function ArticleFeed() {
   if (articles.length === 0) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center text-gray-600 dark:text-gray-400">
-          <p className="text-xl">No articles published yet.</p>
-          <p className="mt-2">Check back soon for new content!</p>
+        <div className="text-center text-gray-800 dark:text-gray-200">
+          <p className="text-xl font-medium">No articles published yet.</p>
+          <p className="mt-2 text-gray-700 dark:text-gray-300">Check back soon for new content!</p>
         </div>
       </div>
     );
@@ -66,10 +66,10 @@ export function ArticleFeed() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-50 mb-3">
           Latest Articles
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
+        <p className="text-lg text-gray-700 dark:text-gray-300">
           Discover our latest thoughts, stories, and ideas
         </p>
       </div>
