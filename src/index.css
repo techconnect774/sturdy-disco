@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:is(.dark *));
+
 /* Base styles for better readability */
 @layer base {
   /* Light mode - ensure good contrast */
