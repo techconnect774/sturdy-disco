@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { ThemeToggle } from '../common/ThemeToggle';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -75,7 +76,11 @@ export function AdminLayout({ children }: AdminLayoutProps) {
             </nav>
           </div>
           <div className="flex flex-shrink-0 border-t border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-800">
-            <button
+            <div className="w-full space-y-3">
+              <div className="flex justify-center">
+                <ThemeToggle />
+              </div>
+              <button
               type="button"
               onClick={handleLogout}
               className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:bg-red-500 dark:hover:bg-red-600 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0"
@@ -84,7 +89,8 @@ export function AdminLayout({ children }: AdminLayoutProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
               </svg>
               Logout
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -102,7 +108,9 @@ export function AdminLayout({ children }: AdminLayoutProps) {
               Admin Dashboard
             </h1>
           </div>
-          <button
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors"
@@ -118,7 +126,8 @@ export function AdminLayout({ children }: AdminLayoutProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
-          </button>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
