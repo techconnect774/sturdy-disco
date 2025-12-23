@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { ArrowLeft } from 'lucide-react';
 
 export function AdminLogin() {
   const [email, setEmail] = useState('');
@@ -133,6 +134,17 @@ export function AdminLogin() {
               </button>
             </div>
           </form>
+          
+          {/* Back to Home Link */}
+          <div className="mt-6 text-center">
+            <Link
+              to="/"
+              className="inline-flex items-center text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Home
+            </Link>
+          </div>
         </div>
       </div>
     </div>
