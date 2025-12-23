@@ -7,7 +7,7 @@ interface SEOMetaTagsProps {
   image?: string;
   url?: string;
   type?: 'website' | 'article';
-  publishedTime?: string;
+  publishedTime?: string | null;
   author?: string;
 }
 
