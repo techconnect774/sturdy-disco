@@ -8,9 +8,9 @@
 export function getArticleSEOData(article: {
   title: string;
   content: string;
-  excerpt?: string;
-  media?: Array<{ url: string; type: string }>;
-  published_at?: string;
+  excerpt?: string | null;
+  media?: Array<{ url: string; type: string }> | null;
+  published_at?: string | null;
   id: string;
 }) {
   const baseUrl = window.location.origin;
